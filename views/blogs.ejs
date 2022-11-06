@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+  </head>
+  <body>
+    <% if (user) { %>
+        <p>Welcome <%= user.username %> to our Blog</p>
+        <p>Below is a list of all available blogs</p>
+        <ul>
+        <% blogs.forEach(function(blog) { %>
+        <li><%= blog.title %></li>
+        <% }); %>
+        </ul>
+        <br />
+
+    <% } else { %>
+        <p>Please <a href="/signin">login</a> to view the Blogs</p>
+    <% } %>
+  </body>
+</html>
